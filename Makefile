@@ -125,6 +125,7 @@ manifests: controller-gen
 	$(CONTROLLER_GEN) $(CRD_OPTIONS) rbac:roleName=manager-role webhook paths="./..." output:crd:artifacts:config=config/crd/bases
 
 helm-docs: helm-tool
+	python temp.py
 	$(HELM_TOOL) inject -i charts/aws-pca-issuer/values.yaml -o charts/aws-pca-issuer/README.md --header-search "^<!-- AUTO-GENERATED -->" --footer-search "<!-- /AUTO-GENERATED -->"
 
 # Run goimports against code
