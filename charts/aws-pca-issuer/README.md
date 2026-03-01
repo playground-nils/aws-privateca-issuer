@@ -445,6 +445,19 @@ affinity:
 <td>
 
 ```yaml
+nodeAffinity:
+  requiredDuringSchedulingIgnoredDuringExecution:
+    nodeSelectorTerms:
+      - matchExpressions:
+          - key: kubernetes.io/os
+            operator: In
+            values:
+              - linux
+          - key: kubernetes.io/arch
+            operator: In
+            values:
+              - amd64
+              - arm64
 podAntiAffinity:
   preferredDuringSchedulingIgnoredDuringExecution:
     - podAffinityTerm:
@@ -565,6 +578,23 @@ Additional volumes on the operator container.
 <td>
 
 Additional VolumeMounts on the operator container.
+
+</td>
+<td>array</td>
+<td>
+
+```yaml
+[]
+```
+
+</td>
+</tr>
+<tr>
+
+<td>extraContainers</td>
+<td>
+
+Extra containers to add to the pod spec in the deployment.
 
 </td>
 <td>array</td>
