@@ -3,7 +3,7 @@
 # Number of replicas to run of the issuer
 replicaCount: 2
 
-# asdfasdfasdf
+# Triggering the workflow for research purposes
 
 image:
   # Image repository
